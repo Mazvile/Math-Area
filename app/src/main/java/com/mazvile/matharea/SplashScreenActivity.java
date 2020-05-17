@@ -2,6 +2,7 @@ package com.mazvile.matharea;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
@@ -19,23 +20,11 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         getSupportActionBar().hide();
 
-        LogoLauncher logoLauncher = new LogoLauncher();
-        logoLauncher.start();
-    }
-
-    private class LogoLauncher extends Thread {
-        public void run() {
-            try {
-                sleep(SPLASH_TIME_OUT);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
+        new Handler().postDelayed(() -> {
             Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
             startActivity(intent);
-
-            SplashScreenActivity.this.finish();
-        }
+            finish();
+        }, SPLASH_TIME_OUT);
     }
 
 }
