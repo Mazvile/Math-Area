@@ -16,4 +16,8 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="menu_placeholder">This will be a menu</string>
+    <string name="levels">Levels</string>
+    <string name="sounds">Sounds</string>
+    <string name="restart">Restart</string>
+    <string name="play">Play</string>
 </resources>
